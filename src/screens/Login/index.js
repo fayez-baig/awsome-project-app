@@ -19,32 +19,36 @@ const Login = () => {
     }
   };
 
-  const onSubmit = () => {
+  const validateOnSubmit = () => {
     if (!userDetails.Username) {
       setErrors(prev => {
         return {...prev, Username: 'Please Enter Username'};
       });
     }
-    if (!userDetails.FirstName) {
+    if (!userDetails.Firstname) {
       setErrors(prev => {
-        return {...prev, Username: 'Please Enter Username'};
+        return {...prev, Firstname: 'Please Enter Fristname'};
       });
     }
-    if (!userDetails.LastName) {
+    if (!userDetails.Lastname) {
       setErrors(prev => {
-        return {...prev, Username: 'Please Enter Username'};
+        return {...prev, Lastname: 'Please Enter Lastname'};
       });
     }
     if (!userDetails.Email) {
       setErrors(prev => {
-        return {...prev, Username: 'Please Enter Username'};
+        return {...prev, Email: 'Please Enter Email'};
       });
     }
     if (!userDetails.Password) {
       setErrors(prev => {
-        return {...prev, Password: 'Please Enter Username'};
+        return {...prev, Password: 'Please Enter Password'};
       });
     }
+  };
+
+  const onSubmit = () => {
+    validateOnSubmit();
     console.log(userDetails);
   };
   return (
